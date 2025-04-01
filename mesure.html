@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKCROCHET - Création Sur Mesure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-pale': '#F8E1E7',
+                        'rose-medium': '#E8B4C2',
+                        'rose-dark': '#D88DA7',
+                        'beige': '#F5F0E6',
+                        'taupe': '#8C7973',
+                    }
+                },
+                fontFamily: {
+                    'serif': ['Playfair Display', 'serif'],
+                    'sans': ['Montserrat', 'sans-serif'],
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-beige font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <h1 class="text-3xl font-serif italic font-bold text-taupe">MKCROCHET</h1>
+            </div>
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex space-x-6 text-sm font-medium uppercase tracking-wider">
+                    <li><a href="#" class="text-taupe hover:text-rose-dark border-b-2 border-transparent hover:border-rose-dark py-1 transition duration-300">Accueil</a></li>
+                    <li><a href="#" class="text-taupe hover:text-rose-dark border-b-2 border-transparent hover:border-rose-dark py-1 transition duration-300">Collection</a></li>
+                    <li><a href="#" class="text-taupe hover:text-rose-dark border-b-2 border-rose-dark py-1 transition duration-300">Sur Mesure</a></li>
+                    <li><a href="#" class="text-taupe hover:text-rose-dark border-b-2 border-transparent hover:border-rose-dark py-1 transition duration-300">À Propos</a></li>
+                    <li><a href="#" class="text-taupe hover:text-rose-dark border-b-2 border-transparent hover:border-rose-dark py-1 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Icons -->
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="text-taupe hover:text-rose-dark"><i class="fas fa-user"></i></a>
+                <a href="#" class="text-taupe hover:text-rose-dark"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative py-20 bg-rose-pale">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl font-serif italic text-taupe mb-6">Création Sur Mesure</h1>
+                <p class="text-lg text-taupe mb-4">Votre lingerie unique, parfaitement adaptée à votre morphologie et à vos envies.</p>
+                <p class="text-taupe mb-0">Remplissez notre formulaire pour débuter votre projet personnalisé.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white shadow-md rounded-sm p-8">
+                    <!-- Stepper -->
+                    <div class="flex justify-between items-center mb-12" id="stepper">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-rose-dark flex items-center justify-center text-white font-medium mb-2 step-indicator" data-step="1">1</div>
+                            <span class="text-sm text-taupe">Informations personnelles</span>
+                        </div>
+                        <div class="h-1 flex-1 bg-gray-200 mx-4 step-line"></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-taupe font-medium mb-2 step-indicator" data-step="2">2</div>
+                            <span class="text-sm text-taupe">Mensurations</span>
+                        </div>
+                        <div class="h-1 flex-1 bg-gray-200 mx-4 step-line"></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-taupe font-medium mb-2 step-indicator" data-step="3">3</div>
+                            <span class="text-sm text-taupe">Détails & Préférences</span>
+                        </div>
+                        <div class="h-1 flex-1 bg-gray-200 mx-4 step-line"></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-taupe font-medium mb-2 step-indicator" data-step="4">4</div>
+                            <span class="text-sm text-taupe">Confirmation</span>
+                        </div>
+                    </div>
+
+                    <!-- Form Steps -->
+                    <form id="custom-form">
+                        <!-- Step 1: Personal Information -->
+                        <div class="step-content active" id="step-1">
+                            <h2 class="text-2xl font-serif text-taupe mb-6">Vos informations personnelles</h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="firstName" class="block text-taupe mb-2">Prénom *</label>
+                                    <input type="text" id="firstName" name="firstName" required class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-taupe mb-2">Nom *</label>
+                                    <input type="text" id="lastName" name="lastName" required class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="email" class="block text-taupe mb-2">Email *</label>
+                                    <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-taupe mb-2">Téléphone *</label>
+                                    <input type="tel" id="phone" name="phone" required class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="address" class="block text-taupe mb-2">Adresse</label>
+                                <input type="text" id="address" name="address" class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                            </div>
+                            
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+                                <div class="col-span-1">
+                                    <label for="postalCode" class="block text-taupe mb-2">Code Postal</label>
+                                    <input type="text" id="postalCode" name="postalCode" class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                                <div class="col-span-1 md:col-span-3">
+                                    <label for="city" class="block text-taupe mb-2">Ville</label>
+                                    <input type="text" id="city" name="city" class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-end mt-8">
+                                <button type="button" class="next-step bg-rose-dark text-white px-8 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe transition duration-300">
+                                    Continuer
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Measurements -->
+                        <div class="step-content hidden" id="step-2">
+                            <h2 class="text-2xl font-serif text-taupe mb-6">Vos mensurations</h2>
+                            
+                            <div class="mb-8">
+                                <p class="text-taupe mb-4">Pour vous garantir un ajustement parfait, nous avons besoin de connaître vos mensurations précises. Référez-vous à notre <a href="#" class="text-rose-dark underline">guide de mesure</a> pour vous aider.</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                                <div>
+                                    <label for="tourPoitrine" class="block text-taupe mb-2">Tour de poitrine (cm) *</label>
+                                    <input type="number" id="tourPoitrine" name="tourPoitrine" required class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                                <div>
+                                    <label for="tourSousPoitrine" class="block text-taupe mb-2">Tour sous poitrine (cm) *</label>
+                                    <input type="number" id="tourSousPoitrine" name="tourSousPoitrine" required class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                                <div>
+                                    <label for="tailleHautSoutien" class="block text-taupe mb-2">Taille habituelle de soutien-gorge</label>
+                                    <input type="text" id="tailleHautSoutien" name="tailleHautSoutien" placeholder="Ex: 90C" class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                                <div>
+                                    <label for="tourTaille" class="block text-taupe mb-2">Tour de taille (cm) *</label>
+                                    <input type="number" id="tourTaille" name="tourTaille" required class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                                <div>
+                                    <label for="tourHanches" class="block text-taupe mb-2">Tour de hanches (cm) *</label>
+                                    <input type="number" id="tourHanches" name="tourHanches" required class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                </div>
+                                <div>
+                                    <label for="tailleBas" class="block text-taupe mb-2">Taille habituelle de culotte</label>
+                                    <select id="tailleBas" name="tailleBas" class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                        <option value="">Sélectionner</option>
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between mt-8">
+                                <button type="button" class="prev-step bg-transparent border border-taupe text-taupe px-6 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe hover:text-white transition duration-300">
+                                    Retour
+                                </button>
+                                <button type="button" class="next-step bg-rose-dark text-white px-8 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe transition duration-300">
+                                    Continuer
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Details and Preferences -->
+                        <div class="step-content hidden" id="step-3">
+                            <h2 class="text-2xl font-serif text-taupe mb-6">Vos préférences</h2>
+                            
+                            <div class="mb-6">
+                                <label class="block text-taupe mb-2">Type de pièce souhaitée *</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="soutienGorge" name="pieceType" value="Soutien-gorge" class="mr-2">
+                                        <label for="soutienGorge" class="text-taupe">Soutien-gorge</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="culotte" name="pieceType" value="Culotte" class="mr-2">
+                                        <label for="culotte" class="text-taupe">Culotte</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="ensemble" name="pieceType" value="Ensemble complet" class="mr-2">
+                                        <label for="ensemble" class="text-taupe">Ensemble complet</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-taupe mb-2">Couleur(s) préférée(s) *</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="blanc" name="couleur" value="Blanc" class="mr-2">
+                                        <label for="blanc" class="text-taupe">Blanc</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="noir" name="couleur" value="Noir" class="mr-2">
+                                        <label for="noir" class="text-taupe">Noir</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="beige" name="couleur" value="Beige" class="mr-2">
+                                        <label for="beige" class="text-taupe">Beige/Nude</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="rose" name="couleur" value="Rose" class="mr-2">
+                                        <label for="rose" class="text-taupe">Rose</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="rouge" name="couleur" value="Rouge" class="mr-2">
+                                        <label for="rouge" class="text-taupe">Rouge</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="bleu" name="couleur" value="Bleu" class="mr-2">
+                                        <label for="bleu" class="text-taupe">Bleu</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="vert" name="couleur" value="Vert" class="mr-2">
+                                        <label for="vert" class="text-taupe">Vert</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="violet" name="couleur" value="Violet" class="mr-2">
+                                        <label for="violet" class="text-taupe">Violet</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-taupe mb-2">Style préféré *</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div class="flex items-center">
+                                        <input type="radio" id="style1" name="style" value="Romantique" class="mr-2" required>
+                                        <label for="style1" class="text-taupe">Romantique & délicat</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="style2" name="style" value="Moderne" class="mr-2">
+                                        <label for="style2" class="text-taupe">Moderne & minimaliste</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="style3" name="style" value="Sensuel" class="mr-2">
+                                        <label for="style3" class="text-taupe">Sensuel & audacieux</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="details" class="block text-taupe mb-2">Détails supplémentaires et demandes spécifiques</label>
+                                <textarea id="details" name="details" rows="4" class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark" placeholder="Décrivez vos souhaits, inspirations ou toute information complémentaire qui nous aiderait à créer votre pièce idéale..."></textarea>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="budget" class="block text-taupe mb-2">Budget approximatif (€)</label>
+                                <select id="budget" name="budget" class="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:border-rose-dark">
+                                    <option value="">Sélectionner</option>
+                                    <option value="<100">Moins de 100€</option>
+                                    <option value="100-200">Entre 100€ et 200€</option>
+                                    <option value="200-300">Entre 200€ et 300€</option>
+                                    <option value=">300">Plus de 300€</option>
+                                </select>
+                            </div>
+                            
+                            <div class="flex justify-between mt-8">
+                                <button type="button" class="prev-step bg-transparent border border-taupe text-taupe px-6 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe hover:text-white transition duration-300">
+                                    Retour
+                                </button>
+                                <button type="button" class="next-step bg-rose-dark text-white px-8 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe transition duration-300">
+                                    Récapitulatif
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Summary and Confirmation -->
+                        <div class="step-content hidden" id="step-4">
+                            <h2 class="text-2xl font-serif text-taupe mb-6">Récapitulatif de votre demande</h2>
+                            
+                            <div id="form-summary" class="bg-rose-pale/30 p-6 rounded-sm mb-8">
+                                <!-- Form summary will be filled by JavaScript -->
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="flex items-start">
+                                    <input type="checkbox" id="consent" name="consent" required class="mr-2 mt-1">
+                                    <span class="text-taupe">J'accepte que mes informations soient traitées pour ma demande de création sur mesure et que MKCROCHET me contacte par WhatsApp pour discuter de mon projet. *</span>
+                                </label>
+                            </div>
+                            
+                            <div class="flex justify-between mt-8">
+                                <button type="button" class="prev-step bg-transparent border border-taupe text-taupe px-6 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe hover:text-white transition duration-300">
+                                    Modifier
+                                </button>
+                                <button type="submit" id="submit-form" class="bg-rose-dark text-white px-8 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe transition duration-300">
+                                    Envoyer ma demande
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="success-message" class="hidden text-center py-12">
+                        <div class="text-rose-dark text-5xl mb-4">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2 class="text-2xl font-serif text-taupe mb-4">Demande envoyée avec succès !</h2>
+                        <p class="text-taupe mb-6">Merci pour votre demande de création sur mesure. Nous vous contacterons très prochainement par WhatsApp pour discuter des détails de votre projet.</p>
+                        <a href="#" class="inline-block bg-taupe text-white px-8 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-rose-dark transition duration-300">
+                            Retour à l'accueil
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-taupe text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-2xl font-serif italic font-bold mb-6">MKCROCHET</h3>
+                    <p class="mb-6 text-white/80">Osez l'authenticité, laissez nos crochets donner vie à vos envies.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/80 hover:text-rose-medium"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white/80 hover:text-rose-medium"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white/80 hover:text-rose-medium"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm uppercase tracking-wider font-medium mb-6">Collections</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">Nouveautés</a></li>
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">Soutiens-gorge</a></li>
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">Culottes & Tangas</a></li>
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">Ensembles</a></li>
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">Éditions limitées</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm uppercase tracking-wider font-medium mb-6">Informations</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">À propos</a></li>
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">Livraison</a></li>
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">Entretien</a></li>
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">Guide des tailles</a></li>
+                        <li><a href="#" class="hover:text-rose-medium transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm uppercase tracking-wider font-medium mb-6">Contact</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Atelier MKCROCHET, Paris, France</li>
+                        <li><i class="fas fa-phone-alt mr-2"></i> +33 (0)1 23 45 67 89</li>
+                        <li><i class="fas fa-envelope mr-2"></i> contact@mkcrochet.fr</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-8 text-center text-white/60 text-sm">
+                <p>&copy; 2025 MKCROCHET. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form steps navigation
+            const steps = document.querySelectorAll('.step-content');
+            const stepIndicators = document.querySelectorAll('.step-indicator');
+            const nextButtons = document.querySelectorAll('.next-step');
+            const prevButtons = document.querySelectorAll('.prev-step');
+            const form = document.getElementById('custom-form');
+            const successMessage = document.getElementById('success-message');
+            
+            // Default WhatsApp number - replace with your actual number
+            const whatsappNumber = "33612345678";  // Replace with your actual WhatsApp number
+            
+            // Next step buttons
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const currentStep = this.closest('.step-content');
+                    const currentStepIndex = Array.from(steps).indexOf(currentStep);
+                    
+                    // Validation for required fields in the current step
+                    const requiredFields = currentStep.querySelectorAll('[required]');
+                    let isValid = true;
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value) {
+                            field.style.borderColor = '#D88DA7';
+                            isValid = false;
+                        } else {
+                            field.style.borderColor = '';
+                        }
+                    });
+                    
+                    if (!isValid) {
+                        alert('Veuillez remplir tous les champs obligatoires.');
+                        return;
+                    }
+                    
+                    // If it's the last step before summary, generate summary
+                    if (currentStepIndex === 2) {
+                        generateSummary();
+                    }
+                    
+                    // Move to next step
+                    currentStep.classList.add('hidden');
+                    steps[currentStepIndex + 1].classList.remove('hidden');
+                    
+                    // Update stepper
+                    stepIndicators[currentStepIndex].classList.remove('bg-rose-dark');
+                    stepIndicators[currentStepIndex].classList.add('bg-green-500');
+                    stepIndicators[currentStepIndex].classList.add('text-white');
+                    stepIndicators[currentStepIndex].innerHTML = '<i class="fas fa-check"></i>';
+                    
+                    stepIndicators[currentStepIndex + 1].classList.remove('bg-gray-200');
+                    stepIndicators[currentStepIndex + 1].classList.add('bg-rose-dark');
+                    stepIndicators[currentStepIndex + 1].classList.add('text-white');
+                });
+            });
+        })
+    </script>
+</body>

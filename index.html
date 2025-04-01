@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKCROCHET - Lingerie Artisanale en Crochet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-pale': '#F8E1E7',
+                        'rose-medium': '#E8B4C2',
+                        'rose-dark': '#D88DA7',
+                        'beige': '#F5F0E6',
+                        'taupe': '#8C7973',
+                    }
+                },
+                fontFamily: {
+                    'serif': ['Playfair Display', 'serif'],
+                    'sans': ['Montserrat', 'sans-serif'],
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-beige font-sans">
+<!-- Header -->
+<header class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center mb-4 md:mb-0">
+            <h1 class="text-3xl font-serif italic font-bold text-taupe">MKCROCHET</h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="flex space-x-6 text-sm font-medium uppercase tracking-wider">
+                <li><a href="index.html" class="text-taupe hover:text-rose-dark border-b-2 border-transparent hover:border-rose-dark py-1 transition duration-300">Accueil</a></li>
+                <li><a href="#" class="text-taupe hover:text-rose-dark border-b-2 border-transparent hover:border-rose-dark py-1 transition duration-300">Collection</a></li>
+                <li><a href="mesure.html" class="text-taupe hover:text-rose-dark border-b-2 border-transparent hover:border-rose-dark py-1 transition duration-300">Sur Mesure</a></li>
+                <li><a href="#" class="text-taupe hover:text-rose-dark border-b-2 border-transparent hover:border-rose-dark py-1 transition duration-300">À Propos</a></li>
+                <li><a href="#" class="text-taupe hover:text-rose-dark border-b-2 border-transparent hover:border-rose-dark py-1 transition duration-300">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Icons -->
+        <div class="flex space-x-4 mt-4 md:mt-0">
+            <a href="#" class="text-taupe hover:text-rose-dark"><i class="fas fa-search"></i></a>
+            <!-- <a href="#" class="text-taupe hover:text-rose-dark"><i class="fas fa-user"></i></a> -->
+            <!-- <a href="#" class="text-taupe hover:text-rose-dark"><i class="fas fa-shopping-bag"></i></a> -->
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative h-screen">
+    <div class="absolute inset-0 bg-gradient-to-r from-rose-pale/90 to-beige/70 z-10"></div>
+    <div class="absolute inset-0 bg-[url('/api/placeholder/1200/800')] bg-cover bg-center"></div>
+    <div class="container mx-auto px-4 h-full flex items-center relative z-20">
+        <div class="max-w-2xl">
+            <h2 class="text-4xl md:text-6xl font-serif italic font-bold text-taupe mb-6 leading-tight">Lingerie artisanale en crochet</h2>
+            <p class="text-xl md:text-2xl font-light text-taupe mb-10">Osez l'authenticité, laissez nos crochets donner vie à vos envies.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button class="bg-rose-dark text-white px-8 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe transition duration-300">
+                    Découvrir la collection
+                </button>
+                <button class="border border-taupe text-taupe px-8 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe hover:text-white transition duration-300">
+                    Création sur mesure
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Categories -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-serif italic text-center text-taupe mb-2">Nos Créations</h2>
+        <p class="text-center text-taupe mb-12 max-w-xl mx-auto">Chaque pièce est minutieusement créée à la main avec les meilleures laines, pour une lingerie unique aussi confortable qu'élégante.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="group relative overflow-hidden">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="/images/8.jpeg" alt="Soutiens-gorge" class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-taupe/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-serif text-white mb-1">Soutiens-gorge</h3>
+                        <div class="flex justify-between items-center">
+                            <p class="text-white/90 font-light">Collection Délicatesse</p>
+                            <button class="text-white border-b border-white/50 hover:border-white pb-1 transition duration-300">Découvrir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="/images/6.jpeg" alt="Culottes & Tangas" class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-taupe/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-serif text-white mb-1">Culottes & Tangas</h3>
+                        <div class="flex justify-between items-center">
+                            <p class="text-white/90 font-light">Collection Sensualité</p>
+                            <button class="text-white border-b border-white/50 hover:border-white pb-1 transition duration-300">Découvrir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="/images/1.jpeg" alt="Ensembles" class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-taupe/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-serif text-white mb-1">Ensembles</h3>
+                        <div class="flex justify-between items-center">
+                            <p class="text-white/90 font-light">Collection Harmonie</p>
+                            <button class="text-white border-b border-white/50 hover:border-white pb-1 transition duration-300">Découvrir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Artisanat Section -->
+<section class="py-20 bg-rose-pale/30">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-12">
+                <h2 class="text-3xl font-serif italic text-taupe mb-6">L'Art du Crochet</h2>
+                <p class="text-taupe mb-6 leading-relaxed">Chaque pièce MKCROCHET est réalisée à la main avec passion et savoir-faire. Nous sélectionnons les laines les plus douces et de la plus haute qualité pour créer des pièces de lingerie uniques qui subliment votre silhouette.</p>
+                <p class="text-taupe mb-8 leading-relaxed">Notre atelier français perpétue les techniques traditionnelles du crochet tout en les modernisant pour créer des designs contemporains qui allient confort, élégance et sensualité.</p>
+                <button class="bg-transparent border border-taupe text-taupe px-6 py-3 font-medium uppercase tracking-wider hover:bg-taupe hover:text-white transition duration-300">
+                    Notre histoire
+                </button>
+            </div>
+            <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                <img src="/api/placeholder/400/400" alt="Artisanat crochet" class="rounded-sm">
+                <img src="/api/placeholder/400/400" alt="Laine et crochet" class="rounded-sm mt-8">
+                <img src="/api/placeholder/400/400" alt="Détail crochet" class="rounded-sm">
+                <img src="/api/placeholder/400/400" alt="Création en cours" class="rounded-sm mt-8">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Nouveautés Section -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-serif italic text-center text-taupe mb-2">Nos Nouveautés</h2>
+        <p class="text-center text-taupe mb-12 max-w-xl mx-auto">Découvrez nos dernières créations, entre tradition et modernité.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="group">
+                <div class="mb-4 overflow-hidden">
+                    <img src="/images/1.jpeg" alt="Produit 1" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="text-taupe font-medium">Soutien-gorge Élégance</h3>
+                <p class="text-rose-dark font-medium mt-1">8900 XAF</p>
+            </div>
+
+            <div class="group">
+                <div class="mb-4 overflow-hidden">
+                    <img src="/images/2.jpeg" alt="Produit 2" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="text-taupe font-medium">Ensemble Séduction</h3>
+                <p class="text-rose-dark font-medium mt-1">15900 XAF</p>
+            </div>
+
+            <div class="group">
+                <div class="mb-4 overflow-hidden">
+                    <img src="/images/3.jpeg" alt="Produit 3" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="text-taupe font-medium">Culotte Délicatesse</h3>
+                <p class="text-rose-dark font-medium mt-1">6500 XAF</p>
+            </div>
+
+            <div class="group">
+                <div class="mb-4 overflow-hidden">
+                    <img src="/images/4.jpeg" alt="Produit 4" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="text-taupe font-medium">Bralette Tendresse</h3>
+                <p class="text-rose-dark font-medium mt-1">7900 XAF</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <button class="bg-rose-dark text-white px-8 py-3 rounded-sm font-medium tracking-wider uppercase hover:bg-taupe transition duration-300">
+                Voir toute la collection
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Sur Mesure Section -->
+<section class="py-20 bg-taupe/10">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-serif italic text-taupe mb-6">Création Sur Mesure</h2>
+            <p class="text-taupe mb-10 leading-relaxed">Vous rêvez d'une pièce unique qui vous ressemble ? Nos artisanes peuvent créer la lingerie de vos rêves, adaptée à votre morphologie et à vos envies. Consultez-nous pour une création 100% personnalisée.</p>
+            <button class="bg-transparent border border-taupe text-taupe px-8 py-3 font-medium uppercase tracking-wider hover:bg-taupe hover:text-white transition duration-300">
+                Prendre rendez-vous
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Témoignages -->
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-serif italic text-center text-taupe mb-12">Ce que nos clientes disent</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 shadow-sm">
+                <div class="text-rose-medium mb-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-taupe italic mb-6">"La qualité des matières est exceptionnelle. C'est à la fois très confortable et terriblement élégant. Un vrai coup de cœur !"</p>
+                <p class="font-medium text-taupe">Sophie L.</p>
+            </div>
+
+            <div class="bg-white p-8 shadow-sm">
+                <div class="text-rose-medium mb-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-taupe italic mb-6">"J'ai commandé un ensemble sur mesure et le résultat est au-delà de mes espérances. Un travail d'artisanat minutieux et un service client impeccable."</p>
+                <p class="font-medium text-taupe">Marie T.</p>
+            </div>
+
+            <div class="bg-white p-8 shadow-sm">
+                <div class="text-rose-medium mb-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-taupe italic mb-6">"Ces pièces sont uniques et tellement plus confortables que la lingerie industrielle. On sent tout l'amour et le savoir-faire dans chaque maille."</p>
+                <p class="font-medium text-taupe">Clara B.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="py-16 bg-rose-pale">
+    <div class="container mx-auto px-4">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-2xl font-serif italic text-taupe mb-4">Rejoignez notre communauté</h2>
+            <p class="text-taupe mb-6">Inscrivez-vous à notre newsletter pour découvrir nos nouveautés en avant-première et bénéficier d'offres exclusives.</p>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <input type="email" placeholder="Votre adresse email" class="flex-1 px-4 py-3 border border-taupe/30 focus:border-taupe focus:outline-none">
+                <button class="bg-taupe text-white px-6 py-3 font-medium uppercase tracking-wider hover:bg-rose-dark transition duration-300">
+                    S'inscrire
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-taupe text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <h3 class="text-2xl font-serif italic font-bold mb-6">MKCROCHET</h3>
+                <p class="mb-6 text-white/80">Osez l'authenticité, laissez nos crochets donner vie à vos envies.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white/80 hover:text-rose-medium"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white/80 hover:text-rose-medium"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white/80 hover:text-rose-medium"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-sm uppercase tracking-wider font-medium mb-6">Collections</h4>
+                <ul class="space-y-3 text-white/80">
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">Nouveautés</a></li>
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">Soutiens-gorge</a></li>
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">Culottes & Tangas</a></li>
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">Ensembles</a></li>
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">Éditions limitées</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-sm uppercase tracking-wider font-medium mb-6">Informations</h4>
+                <ul class="space-y-3 text-white/80">
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">À propos</a></li>
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">Livraison</a></li>
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">Entretien</a></li>
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">Guide des tailles</a></li>
+                    <li><a href="#" class="hover:text-rose-medium transition duration-300">FAQ</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="border-t border-white/20 pt-8 text-center text-white/60 text-sm">
+            <p>&copy; 2025 MKCROCHET. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
